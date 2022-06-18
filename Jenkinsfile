@@ -5,12 +5,7 @@ pipeline {
     }
 
   }
-  stages {
-    stage('error') {
-      steps {
-        sh 'docker build . -t test'
-      }
-    }
-
+  stage('Build'){ 
+          docker.build(imageName) 
   }
 }
