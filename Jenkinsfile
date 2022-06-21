@@ -8,7 +8,9 @@ pipeline {
   stages {
     stage('Verification') {
       steps {
-        sh 'docker --version'
+        withDockerServer([uri: 'dind']) {
+            sh 'docker build /ci-dotnet-sample/Dockerfile .'
+        }
       }
     }
 
