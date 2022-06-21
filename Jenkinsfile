@@ -1,16 +1,12 @@
-pipeline{
-    agent none
-    stages{
-        stage('stage_name'){
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
             steps {
-                agent {
-                    dockerfile{
-                    dir 'ci-dotnet-sample/Dockerfile'
-                    }
-                }
+                sh 'make' 
+                archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true 
             }
-         }
+        }
     }
 }
-
-
