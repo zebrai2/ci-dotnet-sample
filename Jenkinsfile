@@ -4,7 +4,6 @@ pipeline{
         stage('stage_name'){
             agent {
                 dockerfile{
-                label 'my-build'
                 dir ' ci-dotnet-sample/Dockerfile'
                 }
             }
