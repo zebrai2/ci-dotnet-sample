@@ -1,11 +1,10 @@
 pipeline {
-  agent any
+  agent { dockerfile true }
   stages {
     stage('') {
       steps {
         echo 'Building'
       }
     }
-
   }
 }
