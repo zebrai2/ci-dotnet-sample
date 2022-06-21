@@ -4,7 +4,7 @@ pipeline{
         stage('stage_name'){
             agent {
                 dockerfile{
-                dir ' ci-dotnet-sample/Dockerfile'
+                dir 'ci-dotnet-sample/Dockerfile'
                 }
             }
          }
