@@ -1,10 +1,13 @@
 pipeline {
-  agent { dockerfile true }
+  agent {
+    dockerfile true
+  }
   stages {
-    stage('') {
+    stage('error') {
       steps {
         sh 'docker --version'
       }
     }
+
   }
 }
