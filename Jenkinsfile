@@ -1,18 +1,15 @@
-pipeline {
-  agent {
-    docker {
-      image 'jenkins/jnlp-agent-docker'
+pipeline{
+    agent none
+    stages{
+        stage('stage_name'){
+            agent {
+                dockerfile{
+                label 'my-build'
+                dir ' ci-dotnet-sample/Dockerfile'
+                }
+            }
+         }
     }
-
-  }
-  stages {
-    stage('Verification') {
-      steps {
-        withDockerServer([uri: 'dind']) {
-            sh 'docker build /ci-dotnet-sample/Dockerfile .'
-        }
-      }
-    }
-
-  }
 }
+
+
