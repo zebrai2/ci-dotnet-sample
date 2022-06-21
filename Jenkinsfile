@@ -6,7 +6,7 @@ pipeline {
 
   }
   stages {
-    stage('error') {
+    stage('Verification') {
       steps {
         sh 'docker --version'
       }
