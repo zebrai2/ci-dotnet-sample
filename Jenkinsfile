@@ -1,7 +1,7 @@
 pipeline {
   agent {
     docker {
-      image 'dind:latest'
+      image 'jenkins/jnlp-agent-docker'
     }
 
   }
