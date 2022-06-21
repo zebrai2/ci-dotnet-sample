@@ -1,6 +1,9 @@
 pipeline {
   agent {
-    dockerfile true
+    docker {
+      image 'jenkins/jnlp-agent-docker:latest'
+    }
+
   }
   stages {
     stage('error') {
